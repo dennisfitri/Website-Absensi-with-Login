@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Absensi</title>
+  <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Absensi Kelas</h2>
+    <table class="table table-striped" id="tableabsen">
+      <thead>
+        <tr>
+          <th>NPM</th>
+          <th>Nama</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each results}}
+        <tr>
+          <td>{{ npm }}</td>
+          <td>{{ mahasiswa_nama }}</td>
+          <td>
+            <input type="radio" onclick="inputHadir({{ npm }})">Hadir
+            <input type="radio" onclick="inputSakit({{ npm }})">Sakit
+            <input type="radio" onclick="inputIzin({{ npm }})">Izin
+            <input type="radio" onclick="inputAlpa({{ npm }})">Tanpa Keterangan
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <a href="/mahasiswa" class="btn btn-success" id="btn-absen">Selesai</a>
+  </div>
+</body>
+<script>
+  function inputHadir(npm) {
+    window.location.href = `/kehadiran/${npm}/hadir`;
+  }
+
+  function inputSakit(npm) {
+    window.location.href = `/kehadiran/${npm}/sakit`;
+  }
+
+  function inputIzin(npm) {
+    window.location.href = `/kehadiran/${npm}/izin`;
+  }
+
+  function inputAlpa(npm) {
+    window.location.href = `/kehadiran/${npm}/alpa`;
+  }
+
+</script>

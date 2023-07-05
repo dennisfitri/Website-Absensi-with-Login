@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rekap Kehadiran Mahasiswa</title>
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Rekap Kehadiran Mahasiswa</h1>
+        <h3>Semua Kehadiran</h3>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>NPM</th>
+                <th>Nama</th>
+                <th>Hadir</th>
+                <th>Sakit</th>
+                <th>Izin</th>
+                <th>Tanpa Keterangan</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each rekap}}
+                <tr>
+                    <td>{{npm}}</td>
+                    <td>{{mahasiswa_nama}}</td>
+                    <td>{{jumlah_hadir}}</td>
+                    <td>{{jumlah_sakit}}</td>
+                    <td>{{jumlah_izin}}</td>
+                    <td>{{jumlah_alpa}}</td>
+                    <td>{{jumlah}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+        </table>
+        
